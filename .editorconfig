@@ -1,0 +1,60 @@
+# EditorConfig | https://editorconfig.org
+# This file defines how supported editors (including VS Code) should format files while editing them.
+
+# This is the top-most EditorConfig file.
+
+root = true
+
+
+# Default settings for all text files
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+
+# Markdown: Preserve trailing spaces because Markdown uses two trailing spaces to create a hard line break.
+
+[*.{md,markdown}]
+trim_trailing_whitespace = false
+
+
+# Tab-indented files
+
+[Makefile]
+indent_style = tab
+
+
+# Two-space indentation
+#
+# This is the preferred style for the website projects, including:
+#   - Ruby / Jekyll
+#   - HTML, CSS, SCSS
+#   - JavaScript / JSON
+#   - Liquid templates
+#   - YAML / TOML configuration
+#   - SVG and Web Manifest files
+
+[*.{css,html,js,json,jsonc,liquid,scss,svg,toml,webmanifest,xml,yaml,yml}]
+indent_style = space
+indent_size = 2
+
+[*.rb]
+indent_style = space
+indent_size = 2
+
+[{Gemfile,Rakefile,Guardfile}]
+indent_style = space
+indent_size = 2
+
+
+# GitHub Actions: Included explicitly as documentation, even though *.yml already matches.
+
+[.github/workflows/*]
+indent_style = space
+indent_size = 2
+
+# Binary files are intentionally managed by .gitattributes.
+# Media files, archives, fonts, and documents should not be edited as text.
