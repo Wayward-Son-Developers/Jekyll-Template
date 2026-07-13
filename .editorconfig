@@ -1,5 +1,7 @@
 # EditorConfig | https://editorconfig.org
 # This file defines how supported editors (including VS Code) should format files while editing them.
+#   Binary files are intentionally managed by .gitattributes.
+#   Media files, archives, fonts, and documents should not be edited as text.
 
 # This is the top-most EditorConfig file.
 
@@ -55,6 +57,3 @@ indent_size = 2
 [.github/workflows/*]
 indent_style = space
 indent_size = 2
-
-# Binary files are intentionally managed by .gitattributes.
-# Media files, archives, fonts, and documents should not be edited as text.
