@@ -1,0 +1,11 @@
+---
+layout: null
+author_profile: false
+permalink: /robots.txt
+---
+
+# https://robotstxt.org/
+
+User-agent: *
+
+Sitemap: {{ '/sitemap.xml' | absolute_url }}

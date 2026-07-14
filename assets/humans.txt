@@ -1,0 +1,24 @@
+---
+layout: null
+author_profile: false
+permalink: /humans.txt
+---
+
+# https://humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+    Everything       : Mark Bussell Jr (AnonJr)
+    Portfolio        : https://www.waywardsondevelopers.com/
+    X/Twitter        : @AnonJr
+    CV               : https://www.anonjr.com/p/cv.html
+
+# SITE
+	Security Contact : webdev waywardsondevelopers.com
+    Language         : English
+	Standards        : HTML5, CSS3
+	Dev Tools        : Visual Studio Code, Paint.NET, Jekyll
+
+# SPECIAL THANKS
+    Code Hosting     : GitHub
+    Server/CDN/etc.  : Cloudflare

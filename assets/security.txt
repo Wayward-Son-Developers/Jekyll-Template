@@ -1,0 +1,12 @@
+---
+layout: null
+author_profile: false
+permalink: /.well-known/security.txt
+---
+
+# https://securitytxt.org/
+Contact: mailto:webdev-waywardsondevelopers.com
+Contact: https://x.com/AnonJr
+Preferred-Languages: en-US
+
+#I am a one-man team doing the best I can. Any and all help is appreciated, though I cannot afford a bug bounty or other renumeration at this time.
