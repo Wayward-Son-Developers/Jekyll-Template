@@ -403,3 +403,8 @@ Includes:
 - Shared PowerShell scripts
 - Reusable GitHub Actions workflow
 - Development branch GitHub Pages deployment model
+
+## v1.0.1
+
+- Updated per-site script to account for new repo location
+- Updated core build to GH Action versions supported by Node 24
