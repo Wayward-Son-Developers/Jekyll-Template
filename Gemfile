@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 # Ruby Runtime - Keep this version in sync with the .ruby-version file.
-ruby "3.3.0"
+ruby "~> 3.3.0"
 
 # This project intentionally commits Gemfile.lock to ensure consistent dependency versions across local development, GitHub Actions, and Cloudflare Pages.
 
