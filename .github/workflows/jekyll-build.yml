@@ -30,7 +30,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Setup Ruby Environment
         uses: ruby/setup-ruby@v1
@@ -39,7 +39,7 @@ jobs:
           bundler-cache: true # Runs bundle install & caches automatically
 
       - name: Configure GitHub Pages Metadata
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
 
       - name: Build Jekyll site
         run: bundle exec jekyll build --config ${{ inputs.jekyll-configs }}
@@ -48,8 +48,8 @@ jobs:
         run: echo "${{ inputs.staging-cname }}" > _site/CNAME
 
       - name: Upload Pages Artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
 
       - name: Deploy to GitHub Pages API
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
