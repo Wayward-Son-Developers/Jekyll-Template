@@ -1,0 +1,55 @@
+name: Build Jekyll Site
+
+on:
+  workflow_call:
+    inputs:
+      jekyll-configs:
+        description: "Jekyll configuration files"
+        required: false
+        type: string
+        default: "_config.yml,_config.dev.yml"
+
+      staging-cname:
+        description: "CNAME to inject into GitHub Pages artifact"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    name: GitHub Pages
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby Environment
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: .ruby-version
+          bundler-cache: true # Runs bundle install & caches automatically
+
+      - name: Configure GitHub Pages Metadata
+        uses: actions/configure-pages@v5
+
+      - name: Build Jekyll site
+        run: bundle exec jekyll build --config ${{ inputs.jekyll-configs }}
+
+      - name: Inject CNAME into Build Output
+        run: echo "${{ inputs.staging-cname }}" > _site/CNAME
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+
+      - name: Deploy to GitHub Pages API
+        id: deployment
+        uses: actions/deploy-pages@v4
