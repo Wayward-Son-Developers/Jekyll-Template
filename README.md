@@ -356,7 +356,7 @@ Workflow versions should be tagged.
 Example:
 
 ```
-uses: AnonJr/Jekyll-Template/.github/workflows/jekyll-build.yml@v1.0.0
+uses: Wayward-Son-Developers/Jekyll-Template/.github/workflows/jekyll-build.yml@v1.0.0
 ```
 
 Avoid referencing `main` for stable deployments.
