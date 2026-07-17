@@ -82,9 +82,9 @@ gem "jemoji"
 # https://github.com/jekyll/jekyll-include-cache
 # gem "jekyll-include-cache"
 
-# Pagination support.
-# https://github.com/jekyll/jekyll-paginate
-# gem "jekyll-paginate"
+# Pagination support - pick one, v2 requires more configuration.
+# gem "jekyll-paginate"    # https://github.com/jekyll/jekyll-paginate
+# gem "jekyll-paginate-v2" # https://github.com/sverrirs/jekyll-paginate-v2
 
 
 #--------------------------------------------------------
