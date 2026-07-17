@@ -1,4 +1,43 @@
+# Things to check in all Jekyll configs (Not worried about order, just that they're there)
 
+locale                   : "en-US"
+date_format              : "%d %b %Y" # "%d %b %Y %H:%M" if I want to include time later
+timezone                 : America/New_York # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+#title                   : Defined in _config.dev.yml and _config.prod.yml
+#url                     : Defined in _config.dev.yml and _config.prod.yml
+baseurl                  : # the subpath of your site, e.g. "/blog"
+repository               : "" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+description              : "The personal website of AnonJr"
+
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+# Conversion
+markdown: kramdown
+highlighter: rouge
+lsi: false
+show_drafts       : false
+future: false
+excerpt_separator : <!--more-->
+incremental: false
+
+# Markdown Processing
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
+# HTML Compression https://jch.penibelst.de/
+compress_html:
+  blanklines: true
+  clippings: all
+  comments: all
+  profile: false
 
 # Reading Files
 exclude:

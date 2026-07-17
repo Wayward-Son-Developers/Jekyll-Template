@@ -1,0 +1,4 @@
+# Variables just for the prod environment. These will override the variables in _config.yml when running jekyll build --config _config.yml,_config.prod.yml
+title             : ""
+url               : ""
+environment       : production
