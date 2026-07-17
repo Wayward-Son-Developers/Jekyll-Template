@@ -1,61 +1,275 @@
 # Things to check in all Jekyll configs (Not worried about order, just that they're there)
 
+# Site Settings and Jekyll Config - https://jekyllrb.com/docs/configuration/
 locale                   : "en-US"
-date_format              : "%d %b %Y" # "%d %b %Y %H:%M" if I want to include time later
-timezone                 : America/New_York # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+direction                : # Used in Minimal Mistakes; "ltr" (default), "rtl" # set the direction of the page
+
 #title                   : Defined in _config.dev.yml and _config.prod.yml
 #url                     : Defined in _config.dev.yml and _config.prod.yml
 baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : "" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
-description              : "The personal website of AnonJr"
+description              : "" # Used in jekyll-seo-tag and jekyll-sitemap plugins
+logo                     : # path of logo image, e.g. "/assets/res/88x88.png", also used in jekyll-seo-tag and jekyll-sitemap plugins
 
-encoding: "utf-8"
-markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+repository               : "Wayward-Son-Developers/Jekyll-Template" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+
+date_format              : "%d %b %Y" # "%d %b %Y %H:%M" if I want to include time later
+timezone                 : America/New_York # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
+encoding                 : "utf-8"
+markdown_ext             : "markdown,mkdown,mkdn,mkd,md"
+
+show_drafts              : false
+future                   : false
+
+
+# Site Author used by several plugins.
+author:
+  name                   : "" # Name of the author
+  avatar                 : "" # path of avatar image, e.g. "/assets/res/bio-photo.jpg"
+  bio                    :
+  location               :
+  email                  :
+  # fediverse              : "@you@instance.social"  # used for fediverse:creator meta tag
+
 
 # Conversion
-markdown: kramdown
-highlighter: rouge
-lsi: false
-show_drafts       : false
-future: false
-excerpt_separator : <!--more-->
-incremental: false
+markdown                 : kramdown
+highlighter              : rouge
+lsi                      : false
+excerpt_separator        : <!--more-->
+incremental              : false
 
-# Markdown Processing
+
+# Markdown Processing - If GFM, https://kramdown.gettalong.org/quickref.html / https://github.com/kramdown/parser-gfm
 kramdown:
-  input: GFM
-  hard_wrap: false
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  smart_quotes: lsquo,rsquo,ldquo,rdquo
-  enable_coderay: false
+  auto_ids               : true
+  enable_coderay         : false
+  entity_output          : as_char
+  footnote_nr            : 1
+  hard_wrap              : false
+  input                  : GFM
+  smart_quotes           : lsquo,rsquo,ldquo,rdquo
+  toc_levels             : 1..6
+
+
+# Sass/SCSS - https://github.com/jekyll/jekyll-sass-converter
+sass:
+  sass_dir               : _sass
+  # style: compressed # Defined in _config.dev.yml and _config.prod.yml; https://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+  quiet_deps             : true
+  silence_deprecations   : ['import']
+
 
 # HTML Compression https://jch.penibelst.de/
+# Put `compress_html: false` in the frontmatter to disable on an individual page/post.
 compress_html:
-  blanklines: true
-  clippings: all
-  comments: all
-  profile: false
+  blanklines             : true
+  clippings              : all
+  comments               : all
+  ignore:
+    envs                 : [development]
+  profile                : false
+
+
+# Collections
+collections:
+  pages:
+    output               : false
+    permalink            : /:title:output_ext
+  styleguide:
+    output               : false
+
+
+# Defaults
+#defaults:
+  # _posts
+#  - scope:
+#      path               : "_posts"
+#      type               : posts
+#    values:
+  # Pages defaults
+#  - scope:
+#      path               : "_pages"
+#      type               : pages
+#    values:
+
 
 # Reading Files
+include:
+  - .htaccess
+#  - _pages - Don't put this here unless you want the directory to be processed twice
 exclude:
+  # Environment-specific configuration
   - _config.dev.yml
   - _config.prod.yml
+
+  # Build caches
   - .asset-cache
   - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
+
+  # Development tooling
   - .editorconfig
   - .gitattributes
   - .github/
   - .gitignore
-  - .jekyll-assets-cache
   - .ruby-version
-  - .sass-cache
   - .scripts/
   - .vscode/
+
+  # Build dependencies
   - Gemfile
   - Gemfile.lock
+  - node_modules/
+  - vendor/
+
+  # Repository documentation
   - LICENSE.md
   - README.md
+
+  # Deployment
   - wrangler.toml
+
+
+# Plugins (previously gems, remove the un-used ones)
+plugins:
+  - jekyll-seo-tag
+  - jekyll-archives
+  - jemoji
+  - jekyll-redirect-from
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-gist
+  - jekyll-include-cache
+  - jekyll-paginate
+  - Jekyll-paginate-v2
+
+
+#--------------------------------------------------------
+# Jekyll Plugins
+#--------------------------------------------------------
+
+# Search Engine Optimization metadata - https://github.com/jekyll/jekyll-seo-tag
+twitter:
+  username               : # The site's Twitter handle
+  card                   : # The site's default card type
+
+facebook:
+  username               :
+  app_id                 :
+  publisher              :
+
+og_image                 : # Open Graph/Twitter default site image
+og_image_alt             : # Alt text for Open Graph/Twitter default site image
+
+# For specifying social profiles - https://developers.google.com/structured-data/customize/social-profiles
+social:
+  type                   : # Person or Organization (defaults to Person)
+  name                   : # If the user or organization name differs from the site's name
+  links: # An array of links to social media profiles
+
+google_site_verification :
+bing_site_verification   :
+naver_site_verification  :
+yandex_site_verification :
+baidu_site_verification  :
+
+
+# Create archive pages for categories, tags, etc. - https://github.com/jekyll/jekyll-archives
+#  Type
+#  - GitHub Pages compatible archive pages built with Liquid ~> type: liquid (default)
+#  - Jekyll Archives plugin archive pages ~> type: jekyll-archives
+#  Path (examples)
+#  - Archive page should exist at path when using Liquid method or you can
+#    expect broken links (especially with breadcrumbs enabled)
+#  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
+#  - <base_path>/categories/my-awesome-category/index.html ~> path: /categories/
+#  - <base_path>/my-awesome-category/index.html ~> path: /
+category_archive:
+  type                   : jekyll-archives
+  path                   : /category/
+tag_archive:
+  type                   : jekyll-archives
+  path                   : /tag/
+
+# https://github.com/jekyll/jekyll-archives
+tag_archive_path         : "/tag/:name"
+jekyll-archives:
+  enabled:
+    - tags
+  layouts:
+    tag                  : tagpage
+  permalinks:
+    tag                  : /tag/:name/
+
+
+# GitHub-style emoji support.
+# https://github.com/jekyll/jemoji
+
+
+
+# Redirect old URLs after moving or renaming pages.
+# https://github.com/jekyll/jekyll-redirect-from
+# redirect_from:
+#   json                  : false
+
+
+
+# Generate sitemap.xml
+# https://github.com/jekyll/jekyll-sitemap
+
+
+
+
+# Generate Atom feeds - https://github.com/jekyll/jekyll-feed
+feed:
+  path                   : # blank (default) uses feed.xml
+  posts_limit            : 15
+  icon                   : # Icon with 1:1 proportions for readers to use for the blog feed (not supported by all readers; often overridden by a favicon or site icon)
+  logo                   : # Logo with 2:1 proportions for readers to use for the blog feed (not supported by all readers)
+#  categories: # Generate feeds for each category, list the categories you'd like feeds for. More options available, see docs.
+#  tags:       # Generate feeds for each tag, list the tags you'd like feeds for. More options available, see docs.
+
+# Minimal Mistakes has some similar settings, but only used by the theme logic - not the plugin.
+atom_feed:
+  path                   : # blank (default) uses feed.xml
+  hide                   : # true, false (default)
+
+
+# GitHub Gist embedding.
+# https://github.com/jekyll/jekyll-gist
+
+
+
+
+# Cache rendered include files for faster builds.
+# https://github.com/jekyll/jekyll-include-cache
+
+
+
+
+# Pagination support.
+
+# Pagination with jekyll-paginate -  https://github.com/jekyll/jekyll-paginate
+#paginate                 : 10 # amount of posts to show
+#paginate_path            : /index/page:num/
+
+# Pagination with jekyll-paginate-v2
+# See https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-GENERATOR.md#site-configuration for configuration details
+pagination:
+  enabled                : false # Set enabled to true to use paginate v2
+  debug                  : false
+  collection             : 'posts'
+  per_page               : 10
+  permalink              : '/page/:num/'
+  title                  : ':title - page :num'
+  limit                  : 0
+  sort_field             : 'date'
+  sort_reverse           : true
+  category               : 'posts'
+  tag                    : ''
+  locale                 : ''
+  trail:
+    before               : 2
+    after                : 2
