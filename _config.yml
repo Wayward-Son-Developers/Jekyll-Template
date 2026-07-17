@@ -1,0 +1,22 @@
+
+
+# Reading Files
+exclude:
+  - _config.dev.yml
+  - _config.prod.yml
+  - .asset-cache
+  - .bundle
+  - .editorconfig
+  - .gitattributes
+  - .github/
+  - .gitignore
+  - .jekyll-assets-cache
+  - .ruby-version
+  - .sass-cache
+  - .scripts/
+  - .vscode/
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE.md
+  - README.md
+  - wrangler.toml
