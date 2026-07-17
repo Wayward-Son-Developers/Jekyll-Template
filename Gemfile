@@ -91,7 +91,7 @@ gem "jemoji"
 # Windows Support
 #--------------------------------------------------------
 
-platforms :mingw, :mswin, :x64_mingw, :jruby do
+platforms :windows, :jruby do
 
   # Windows timezone database - https://rubygems.org/gems/tzinfo-data
   gem "tzinfo-data"
