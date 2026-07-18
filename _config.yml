@@ -76,7 +76,7 @@ collections:
   pages:
     output               : false
     permalink            : /:title:output_ext
-  styleguide:
+  styleguide:            # Defined in _config.dev.yml and _config.prod.yml, keeping a sensible default just in case
     output               : false
 
 

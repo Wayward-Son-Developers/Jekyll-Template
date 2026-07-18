@@ -1,8 +1,13 @@
 # Variables just for the prod environment. These will override the variables in _config.yml when running jekyll build --config _config.yml,_config.prod.yml
-title             : ""
-url               : ""
-environment       : production
+title                    : ""
+url                      : ""
+environment              : production
 
 # Sass/SCSS
 sass:
-  style: compressed # https://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+  style                  : compressed # https://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+
+# Disable the style guide/style check pages in dev
+collections:
+  styleguide:
+    output               : false

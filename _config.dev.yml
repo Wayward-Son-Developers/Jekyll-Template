@@ -1,8 +1,13 @@
 # Variables just for the development environment. These will override the variables in _config.yml when running jekyll serve --config _config.yml,_config.dev.yml
-title             : " (Dev)"
-url               : ""
-environment       : development
+title                    : " (Dev)"
+url                      : ""
+environment              : development
 
 # Sass/SCSS
 sass:
-  style: expanded # https://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+  style                  : expanded # https://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+
+# Output the style guide/style check pages in dev
+collections:
+  styleguide:
+    output               : true
