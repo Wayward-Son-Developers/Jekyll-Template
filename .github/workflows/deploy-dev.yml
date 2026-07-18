@@ -17,7 +17,7 @@ concurrency:
 
 jobs:
   build:
-    uses: Wayward-Son-Developers/Jekyll-Template/.github/workflows/jekyll-build.yml@v1.0.1
+    uses: Wayward-Son-Developers/Jekyll-Template/.github/workflows/jekyll-build.yml@v1.1.0
     with:
       staging-cname: # set for dev domain e.g. 'dev.waywardsondevelopers.com'
       jekyll-configs: '_config.yml,_config.dev.yml'
