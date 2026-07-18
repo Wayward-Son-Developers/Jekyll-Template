@@ -1,17 +1,8 @@
 # Jekyll Template
 
-This repository is the starting point and reference implementation for my Jekyll-based websites.
+This repository is the starting point and reference implementation for my Jekyll-based websites. It contains shared configuration, development tooling, Git conventions, and GitHub Actions workflows. The goal is consistency between projects while allowing each site to customize its theme, content, and deployment settings.
 
-It contains shared configuration, development tooling, Git conventions, and GitHub Actions workflows used by projects such as:
-
-* AnonJr.com
-* BibleByExample.com
-* WaywardSonDevelopers.com
-* Future Jekyll sites
-
-The goal is consistency between projects while allowing each site to customize its theme, content, and deployment settings.
-
-# Deployment Model
+## Deployment Model
 
 Development:
 
@@ -23,16 +14,16 @@ main/master branch → Cloudflare Pages → production domain
 
 ---
 
-# Development Environment
+## Development Environment
 
-## Required Software
+### Required Software
 
 Keep development machines synchronized.
 
 Current baseline:
 
 * Ruby: 3.3.x
-* Bundler: current compatible version
+* Bundler: 4.0.x
 * Jekyll: 4.4.x
 * Git
 * Visual Studio Code
@@ -58,7 +49,7 @@ Gemfile.lock
 
 ---
 
-# Local Development
+## Local Development
 
 From the repository root:
 
@@ -78,13 +69,6 @@ Start the development server:
 
 ```powershell
 .\.scripts\serve.ps1
-```
-
-The development build uses:
-
-```
-_config.yml
-_config.dev.yml
 ```
 
 ---
@@ -356,7 +340,7 @@ Workflow versions should be tagged.
 Example:
 
 ```
-uses: Wayward-Son-Developers/Jekyll-Template/.github/workflows/jekyll-build.yml@v1.0.0
+uses: Wayward-Son-Developers/Jekyll-Template/.github/workflows/jekyll-build.yml@v1.1.0
 ```
 
 Avoid referencing `main` for stable deployments.
@@ -388,23 +372,3 @@ Keep related changes synchronized between development machines.
 * A small “Migration Checklist” section for moving an existing site into the template.
 * A “Deployment Map” showing dev → GitHub Pages and main/master → Cloudflare Pages.
 * A note about your future Cloudflare wrangler.toml conventions once that pipeline is finalized.
-
-
-# Changelog
-
-## v1.0.0
-
-Initial release.
-
-Includes:
-
-- Standardized dot files
-- Ruby/Jekyll development environment
-- Shared PowerShell scripts
-- Reusable GitHub Actions workflow
-- Development branch GitHub Pages deployment model
-
-## v1.0.1
-
-- Updated per-site script to account for new repo location
-- Updated core build to GH Action versions supported by Node 24
