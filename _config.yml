@@ -204,21 +204,18 @@ jekyll-archives:
     tag                  : /tag/:name/
 
 
-# GitHub-style emoji support.
-# https://github.com/jekyll/jemoji
+# GitHub-style emoji support - https://github.com/jekyll/jemoji
 
 
 
-# Redirect old URLs after moving or renaming pages.
-# https://github.com/jekyll/jekyll-redirect-from
+# Redirect old URLs after moving or renaming pages - https://github.com/jekyll/jekyll-redirect-from
 # redirect_from:
 #   json                  : false
 
 
 
-# Generate sitemap.xml
-# https://github.com/jekyll/jekyll-sitemap
-
+# Generate sitemap.xml - https://github.com/jekyll/jekyll-sitemap
+# Put `sitemap: false` in the frontmatter to disable on an individual page/post.
 
 
 
@@ -237,16 +234,10 @@ atom_feed:
   hide                   : # true, false (default)
 
 
-# GitHub Gist embedding.
-# https://github.com/jekyll/jekyll-gist
+# GitHub Gist embedding - https://github.com/jekyll/jekyll-gist
 
 
-
-
-# Cache rendered include files for faster builds.
-# https://github.com/jekyll/jekyll-include-cache
-
-
+# Cache rendered include files for faster builds - https://github.com/benbalter/jekyll-include-cache
 
 
 # Pagination support.
