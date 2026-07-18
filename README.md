@@ -1,6 +1,6 @@
 # Jekyll Template
 
-This repository is the starting point and reference implementation for my Jekyll-based websites. It contains shared configuration, development tooling, Git conventions, and GitHub Actions workflows. The goal is consistency between projects while allowing each site to customize its theme, content, and deployment settings.
+This repository is the starting point for my Jekyll-based websites. It contains shared configuration, development tooling, Git conventions, and GitHub Actions workflows. The goal is consistency between projects while allowing each site to customize its theme, content, and deployment settings.
 
 ## Deployment Model
 
@@ -85,7 +85,6 @@ Typical branch usage:
 | master      | Production source (legacy repositories) |
 | dev         | Development/testing source |
 
-Development changes should generally happen on `dev`.
 
 ---
 
