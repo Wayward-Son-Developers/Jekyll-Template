@@ -16,6 +16,7 @@ Minor update:
 - Updated core build to GH Action versions supported by Node 24
 
 ## v1.1.0
+A variety of changes, in no particular order:
 
 - Added more placeholders and standard files for new/updated projects
 - Moved Change Log to it's own file
@@ -25,3 +26,7 @@ Minor update:
 - Added references to alternate pagination gem in `Gemfile` and `_config.yml`
 - Updated/harmonized `_config.yml` with defaults I want to ensure are set, and/or are used by listed plugins
 - Updated `readme.md` to be a little more organized and include a project migration checklist
+- Added appropriate collections settings for the style guide pages to all configs
+- Small updates to style guide pages to not specify a layout, and add a description
+- Added an include for figures, comes with all the various Made Mistakes Themes and makes sure the 404 images work
+- Updated `deploy-dev.yml` to use the new v1.1.0 tagged release
