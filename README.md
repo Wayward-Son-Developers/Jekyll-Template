@@ -371,3 +371,5 @@ Keep related changes synchronized between development machines.
 * A small “Migration Checklist” section for moving an existing site into the template.
 * A “Deployment Map” showing dev → GitHub Pages and main/master → Cloudflare Pages.
 * A note about your future Cloudflare wrangler.toml conventions once that pipeline is finalized.
+* Refactoring Readme to flow better and more concisely
+* Move planned updates and bugs to GitHub Issues
